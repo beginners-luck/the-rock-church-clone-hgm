@@ -75,9 +75,18 @@ body {
 	margin-left: auto;
 	margin-right: auto;
 	*zoom: 1;
-	max-width:1000px;
-	min-width: 0px;
-	width: 100%;	
+	width: 100%;
+	min-width: 0;
+	
+	&.container-1170 {
+		// apply margin 135px on small screens
+		max-width: 1170px;
+	}
+
+	&.container-1380 {
+		// apply margin 30px on small screens
+		max-width: 1380px;
+	}
 }
 
 .container-fluid{
@@ -87,7 +96,7 @@ body {
 	*zoom: 1;
 	width: 100%;
 	max-width:2000px;
-	min-width: 320px;			
+	min-width: 320px;		
 }
 
 

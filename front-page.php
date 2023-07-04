@@ -22,9 +22,17 @@ get_header(); ?>
 		<div id="home-ways-to-connect-section">
 			
 		</div>
-		<div id="home-about-us-section">
 
+		<?php if (have_rows('about_us')) : while (have_rows('about_us')) : the_row(); ?>
+		<div id="home-about-us-section">
+			<img class="background-image lazy" alt="" src="<?php the_sub_field('background_image') ?>" />
+			<div class="wp-content">
+			<?php the_sub_field('content') ; ?>
+			</div>
 		</div>
+		<?php endwhile; ?>
+		<?php endif; ?>
+
 		<div id="home-upcoming-events-section">
 			<!-- TODO -->
 		</div>
