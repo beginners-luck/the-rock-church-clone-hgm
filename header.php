@@ -37,33 +37,39 @@
 <div class="wrap">
 
 <!-- Begin header -->
-<header>
-
-	<?php 
-	// Only display alert bar if user selects it in site options
-	if (true) { 
-	?>
-		<div id="alert-bar">
-			This is temp.
-		</div>
-	<?php 
-	} 
-	?> 
+<header class="container-fluid">
+	
+	<?php if ( get_field('show_alert', 'options') == 1 ) : ?>
+		<!-- Only display alert bar if user selects it in site options -->
+		<?php if ( get_field('alert_link', 'options') ) : ?>
+			<a id="alert-bar" href="<?php the_field('alert_link', 'options'); ?>">
+				<p>
+				<?php the_field('alert_content', 'options'); ?><span class="icon-arrow-white" aria-hidden="true"></span>
+				</p>
+			</a>
+		<?php else : ?>
+			<div id="alert-bar">
+				<p>
+				<?php the_field('alert_content', 'options'); ?>
+				</p>
+			</div>
+		<?php endif; ?>
+	<?php endif; ?>
 	
 	<?php get_template_part('/template-parts/navigation'); ?>
 	
 	<?php 
 	// Get the correct header for the page type/template
 	if (is_front_page()) {
-		get_template_part('/template-parts/header-home'); 
+		get_template_part('template-parts/header', 'home'); 
 	} else if ( is_page_template('template-pages/rios-template.php') ) {
-		get_template_part('/template-parts/header-rios'); 
+		get_template_part('template-parts/header', 'rios'); 
 	} else if ( is_singular( 'message' ) ) { // message cpt
-		get_template_part('/template-parts/header-message-single'); 
+		get_template_part('template-parts/header', 'message-single'); 
 	} else if ( is_singular( 'event' ) ) { // event cpt
-		get_template_part('/template-parts/header-event-single'); 
-	} else { /* I'm New, Messages, Ways to Connect, About, Events, Contact, Default Template */ 
-		get_template_part('/template-parts/header-default'); 
+		get_template_part('template-parts/header', 'event-single'); 
+	} else { /* I'm New, Messages, Ways to Connect, About, Events, Contact, Give, Default Template */ 
+		get_template_part('template-parts/header', 'default'); 
 	}
 	?>
 	

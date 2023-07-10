@@ -56,10 +56,10 @@
                 "class": "",
                 "id": ""
             },
-            "layout": "table",
+            "layout": "row",
             "pagination": 0,
-            "min": 0,
-            "max": 0,
+            "min": 1,
+            "max": 4,
             "collapsed": "",
             "button_label": "Add Row",
             "rows_per_page": 20,
@@ -78,7 +78,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "url",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -113,11 +113,11 @@
                 },
                 {
                     "key": "field_649ce786edfdb",
-                    "label": "Page Link",
-                    "name": "page_link",
+                    "label": "Page Slug",
+                    "name": "page_slug",
                     "aria-label": "",
-                    "type": "url",
-                    "instructions": "Link to the page or location of content for activity.",
+                    "type": "text",
+                    "instructions": "The page's slug, not the full url.",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -126,7 +126,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
+                    "maxlength": "",
+                    "placeholder": "\/ways-to-connect\/#anchor-name",
+                    "prepend": "",
+                    "append": "",
                     "parent_repeater": "field_649ce721edfd8"
                 }
             ]
@@ -201,7 +204,7 @@
                         "class": "",
                         "id": ""
                     },
-                    "return_format": "array",
+                    "return_format": "url",
                     "library": "all",
                     "min_width": "",
                     "min_height": "",
@@ -233,5 +236,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688005976
+    "modified": 1688480550
 }

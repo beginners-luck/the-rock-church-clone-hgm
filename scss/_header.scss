@@ -1,0 +1,129 @@
+header {
+    // margin-bottom: 100px;
+
+    .background-image {
+        border-radius: 0 0 30px 30px;
+    }
+}
+
+// Alert Bar
+#alert-bar {
+    display: block;
+    text-align: center;
+    background-image: linear-gradient(to right, $blue, $teal);
+    font-size: 14px; 
+    color: $white;
+    padding: 8px 13px; 
+
+    text-decoration: none;
+    font-weight: normal;
+
+    span {
+        margin-left: 10px; 
+    }
+
+    @include transition; 
+
+    .icon-arrow-white {
+        @include transition; 
+        display: inline-block;
+    }
+
+    &:hover .icon-arrow-white {
+        transform: translateX(10px); 
+    }
+}
+
+// Home Header
+#hero-container {
+    position: relative;
+    background-color: $blue;
+    height: 700px;
+    z-index: 0; 
+
+    // Position wp-content
+    display: flex;
+    align-items: flex-end;
+    padding: 105px 135px; 
+
+    .wp-content {
+        >:not(:last-child) {
+            margin-bottom: 50px;
+        }
+    }
+
+    // Linear gradient overlay
+    &::after {
+        @include linear-gradient-overlay; 
+    }
+}
+
+// Default Header 
+// Remove margin for certain templates with default header
+.page-template-im-new-template,
+.page-template-about-template,
+.page-template-contact-template {
+    #default-header-container {
+        margin-bottom: 0;
+    }
+}
+
+.page-template-im-new-template {
+    #default-header-container {
+        // Add blue-background for certain templates with default header
+        &::before {
+            content: '';
+            position: absolute; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $blue;
+            z-index: -3;
+        }
+    }
+}
+
+#default-header-container {
+    position: relative;
+    margin-bottom: 100px;
+    // border-radius: 0 0 30px 30px;
+    // overflow: hidden;
+    text-align: center;
+    min-height: 250px;
+
+    display: flex;
+    @include align-center; 
+    justify-content: center;
+
+    // Linear gradient overlay
+    &::after {
+        @include linear-gradient-overlay; 
+        border-radius: 0 0 30px 30px;
+    }
+}
+
+// Rios Header
+#rios-header-container {
+    position: relative;
+    margin-bottom: 100px;
+    height: 450px; 
+    display: flex;
+    gap: 30px; 
+    // padding: 0 135px;
+    justify-content: center; 
+    @include align-center; 
+
+    .header-content {
+        width: 470px;
+    }
+
+    .video {
+        margin-top: 150px;
+    }
+
+    // Linear gradient overlay
+    &::after {
+        @include linear-gradient-overlay; 
+    }
+}

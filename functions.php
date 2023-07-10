@@ -108,6 +108,15 @@ function custom_imagelink_setup()
 
 add_action('admin_init', 'custom_imagelink_setup', 10);		
 
+// Remove content editor from all pages (kept on posts)
+function remove_content_editor()
+{ 
+    remove_post_type_support('page', 'editor');        
+}
+
+add_action('admin_head', 'remove_content_editor');
+
+
 function custom_login_logo() { ?>
     <style type="text/css">    		    
         body.login div#login h1 a {
@@ -124,6 +133,9 @@ function custom_login_logo_url() {
     return get_bloginfo('url');
 }
 add_filter( 'login_headerurl', 'custom_login_logo_url' );
+
+// Allow feature Images
+add_theme_support( 'post-thumbnails' );
 
 // pull in helpers
 require_once('include/helper.php');	

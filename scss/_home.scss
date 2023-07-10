@@ -1,0 +1,103 @@
+// Locations and Times Banners
+#home-location-times-banner {
+    font-family: $secondaryFont;
+    font-size: 30px;
+    color: $white;
+    padding: 27px 13px;
+    text-align: center;
+    background-color: $blue;
+    font-weight: normal;
+    letter-spacing: 2px;
+}
+
+// Recent Sermons
+
+// Ways to Connect
+#home-ways-to-connect-section {
+    display: grid;
+    @include align-center; 
+    grid-template-columns: 1fr 1fr;
+    gap: 90px; 
+    padding: 60px 135px;
+
+    .wp-content {
+        >:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    .left-content-container {
+        display: grid;
+        justify-content: end;
+        grid-template-columns: 300px 300px;
+        gap: 30px; 
+        position: relative;
+
+        &::after {
+            content: ' '; 
+            border-radius: 0 30px 30px 0;
+            position: absolute;
+            z-index: -2;
+            top: 50%; 
+            transform: translate(-150px,-50%);
+            background: $blue;
+            opacity: 0.1;
+            width: 100%;
+            height: calc(100% + 120px);
+        }
+
+        .connect-link {
+            display: inline-flex;
+            align-items: end;
+            padding: 20px;
+            position: relative; 
+            height: 200px; 
+            width: 300px;
+            border-radius: 30px;
+            overflow: hidden;
+            font-size: 24px;
+            font-weight: normal;
+            color: $white; 
+        
+            ::after {
+                @include linear-gradient-overlay; 
+            }
+        
+            &:link, 
+            &:visited, 
+            &:active {
+                color: $white; 
+                text-decoration: none;
+            }
+        }
+        
+        a.connect-link {
+            @include transition; 
+        
+            &:hover {
+                transform: translateY(-10px);
+            }
+        }
+    }
+
+}
+
+// About Us Section Banner
+#home-about-us-section {
+    border-radius: 30px;
+    overflow: hidden;
+    padding: 80px 105px; 
+    position: relative; 
+    font-size: 34px;
+    color: white;
+
+    .wp-content {
+        >:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    ::after {
+        @include linear-gradient-overlay; 
+    }
+}

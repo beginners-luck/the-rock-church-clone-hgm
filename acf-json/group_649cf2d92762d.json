@@ -115,7 +115,7 @@
                 {
                     "key": "field_649cf563bd5d5",
                     "label": "Content",
-                    "name": "",
+                    "name": "content",
                     "aria-label": "",
                     "type": "wysiwyg",
                     "instructions": "Content to be displayed beside the image.",
@@ -258,5 +258,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688008943
+    "modified": 1688940170
 }

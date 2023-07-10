@@ -1,0 +1,27 @@
+/**
+I'm New Template styles
+*/
+#new-introduction-container {
+    background-color: $blue;
+    margin-bottom: 150px !important; 
+
+    .intro-container {
+        display: flex;
+        gap: 64px;
+        @include align-center; 
+        
+        .left-content-container,
+        .right-content-container {
+            width: 50%;
+        }
+
+        h2 {
+            color: $white; 
+        }
+    
+        .video {
+            margin-top: 50px; 
+            margin-bottom: -50px;
+        }
+    }
+}
