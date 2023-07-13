@@ -98,6 +98,8 @@
 
 .icon-download:before {
     content: "\e901";
+    color: $blue; 
+    font-size: 23px;
 }
 
 .icon-play .path1:before {
@@ -174,6 +176,35 @@
     }
 }
 
+.introduction-video-container {
+    background-color: $blue;
+    margin-bottom: 150px !important; 
+
+    .intro-video-container {
+        display: flex;
+        gap: 64px;
+        @include align-center; 
+        
+        .left-content-container,
+        .right-content-container {
+            width: 50%;
+        }
+        
+        h2 {
+            color: $white; 
+        }
+        
+        .video {
+            margin-top: 50px; 
+            margin-bottom: -50px;
+        }
+    }
+
+    .wp-content {
+        color: $white;
+    }
+}
+    
 .two-photos-content-row {
     display: flex;
     @include align-center; 

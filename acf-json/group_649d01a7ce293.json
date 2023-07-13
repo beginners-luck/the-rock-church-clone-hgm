@@ -57,7 +57,7 @@
             "library": "all",
             "min_size": "",
             "max_size": "",
-            "mime_types": ".mp3 .aac .wav .aiff"
+            "mime_types": ".mp3, .aac, .wav, .aiff"
         },
         {
             "key": "field_649d0404346a6",
@@ -85,7 +85,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "post"
+                "value": "messages"
             }
         ]
     ],
@@ -98,5 +98,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1688011951
+    "modified": 1689176888
 }

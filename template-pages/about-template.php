@@ -27,7 +27,9 @@ get_header();
                 if ( have_rows('leadership') ) : while( have_rows('leadership') ) : the_row();
                 ?>
                     <div class="leader">
-                        <img class="portrait-img" alt="" src="<?php the_sub_field('staff_image') ?>" />
+                        <div class="portrait-img-container">
+                            <img class="background-image" alt="" src="<?php the_sub_field('staff_image') ?>" />
+                        </div>
                         <h4 class="leader-name"><?php the_sub_field('first_and_lastname') ?></h4>
                         <p class="leader-position"><?php the_sub_field('position') ?></p>
                     </div>

@@ -394,6 +394,8 @@ img.aligncenter {
 
 .icon-download:before {
   content: "\e901";
+  color: #055ff9;
+  font-size: 23px;
 }
 
 .icon-play .path1:before {
@@ -462,6 +464,32 @@ img.aligncenter {
 }
 .video .play-container span {
   display: inline-block;
+}
+
+.introduction-video-container {
+  background-color: #055ff9;
+  margin-bottom: 150px !important;
+}
+.introduction-video-container .intro-video-container {
+  display: flex;
+  gap: 64px;
+  -moz-align-items: center;
+  align-items: center;
+  align-content: center;
+}
+.introduction-video-container .intro-video-container .left-content-container,
+.introduction-video-container .intro-video-container .right-content-container {
+  width: 50%;
+}
+.introduction-video-container .intro-video-container h2 {
+  color: #fff;
+}
+.introduction-video-container .intro-video-container .video {
+  margin-top: 50px;
+  margin-bottom: -50px;
+}
+.introduction-video-container .wp-content {
+  color: #fff;
 }
 
 .two-photos-content-row {
@@ -800,11 +828,13 @@ header .background-image {
 
 .page-template-im-new-template #default-header-container,
 .page-template-about-template #default-header-container,
-.page-template-contact-template #default-header-container {
+.page-template-contact-template #default-header-container,
+.post-type-archive-messages #default-header-container {
   margin-bottom: 0;
 }
 
-.page-template-im-new-template #default-header-container::before {
+.page-template-im-new-template #default-header-container::before,
+.post-type-archive-messages #default-header-container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -866,6 +896,89 @@ header .background-image {
   height: 100%;
   border-radius: 0 0 30px 30px;
   background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6));
+}
+
+#single-message-header-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 50px 15px;
+}
+#single-message-header-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  border-radius: 0 0 30px 30px;
+  background-color: #055ff9;
+}
+
+#call-to-action {
+  background-color: #055ff9;
+  border-radius: 30px;
+  padding: 36px 135px;
+  color: #fff;
+  font-size: 34px;
+}
+
+footer a:link, footer a:visited {
+  color: #747474;
+  text-decoration: none;
+}
+footer a:hover, footer a:hover .icon-cacpro, footer a:active {
+  text-decoration: none;
+  opacity: 0.75;
+}
+
+#top-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  padding: 50px 0px;
+  -moz-align-items: center;
+  align-items: center;
+  align-content: center;
+}
+#top-footer-bar .right-content-container,
+#top-footer-bar .left-content-container {
+  display: flex;
+  gap: 30px;
+  -moz-align-items: center;
+  align-items: center;
+  align-content: center;
+}
+#top-footer-bar .right-content-container a {
+  font-size: 50px;
+}
+#top-footer-bar .right-content-container a:link, #top-footer-bar .right-content-container a:visited {
+  color: #055ff9;
+}
+
+#bottom-footer-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0px;
+}
+#bottom-footer-bar .left-content-container {
+  display: flex;
+}
+#bottom-footer-bar .menu {
+  gap: 0;
+}
+#bottom-footer-bar .menu li {
+  position: relative;
+  padding: 0px 10px;
+}
+#bottom-footer-bar .menu li:not(:last-child)::after {
+  content: " ";
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 2px;
+  height: 18px;
+  border-right: 2px solid #747474;
 }
 
 #home-location-times-banner {
@@ -987,29 +1100,6 @@ header .background-image {
 /**
 I'm New Template styles
 */
-#new-introduction-container {
-  background-color: #055ff9;
-  margin-bottom: 150px !important;
-}
-#new-introduction-container .intro-container {
-  display: flex;
-  gap: 64px;
-  -moz-align-items: center;
-  align-items: center;
-  align-content: center;
-}
-#new-introduction-container .intro-container .left-content-container,
-#new-introduction-container .intro-container .right-content-container {
-  width: 50%;
-}
-#new-introduction-container .intro-container h2 {
-  color: #fff;
-}
-#new-introduction-container .intro-container .video {
-  margin-top: 50px;
-  margin-bottom: -50px;
-}
-
 #about-intro {
   position: relative;
   padding: 45px 35px;
@@ -1034,10 +1124,12 @@ I'm New Template styles
   gap: 30px;
   justify-content: center;
 }
-#leadership-container .leadership .leader .portrait-img {
+#leadership-container .leadership .leader .portrait-img-container {
+  position: relative;
   aspect-ratio: 1/1;
   max-width: 270px;
   border-radius: 30px;
+  overflow: hidden;
   margin-bottom: 30px;
 }
 
@@ -1069,68 +1161,124 @@ I'm New Template styles
   width: 100%;
 }
 
-#call-to-action {
-  background-color: #055ff9;
-  border-radius: 30px;
-  padding: 36px 135px;
-  color: #fff;
-  font-size: 34px;
+/*
+Styles for messages and single message.
+*/
+#content #messages-content .post-title {
+  margin-bottom: 10px;
 }
-
-footer a:link, footer a:visited {
-  color: #747474;
-  text-decoration: none;
+#content #messages-content .post-date {
+  margin-bottom: 30px;
 }
-footer a:hover, footer a:hover .icon-cacpro, footer a:active {
-  text-decoration: none;
-  opacity: 0.75;
+#content #messages-content .wp-content {
+  margin-bottom: 30px !important;
 }
-
-#top-footer-bar {
+#content #messages-content .file-download {
   display: flex;
   justify-content: space-between;
+  -moz-align-items: center;
+  align-items: center;
+  align-content: center;
+  padding: 20px 0;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 50px 0px;
-  -moz-align-items: center;
-  align-items: center;
-  align-content: center;
 }
-#top-footer-bar .right-content-container,
-#top-footer-bar .left-content-container {
-  display: flex;
+#content #messages-content .file-download a {
+  display: inline-block;
+  text-decoration: none;
+}
+#content #messages-content .file-download a span {
+  vertical-align: middle;
+}
+#content #return-to-sermons-bar {
+  text-align: center;
+  padding: 24px 15px;
+}
+
+.no-recent-sermon {
+  background-color: #055ff9;
+  height: 100px;
+}
+
+#archived-messages > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 30px;
+}
+#archived-messages > div .message .message-link {
+  display: block;
+  transition: all 0.4s ease-in-out;
+  text-decoration: none;
+}
+#archived-messages > div .message .message-link:hover {
+  transform: translateY(-10px);
+}
+#archived-messages > div .message .message-link .photo-container {
+  position: relative;
+  aspect-ratio: 370/219;
+  max-width: 370px;
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+#archived-messages > div .message .message-link .message-title {
+  margin-bottom: 10px;
+}
+#archived-messages > div .message .message-link .message-date {
+  color: #747474;
+}
+
+#pagination {
+  text-align: center;
+  padding: 30px 15px;
+  display: flex;
   -moz-align-items: center;
   align-items: center;
   align-content: center;
+  justify-content: center;
+  gap: 20px;
 }
-#top-footer-bar .right-content-container a {
-  font-size: 50px;
+#pagination .page-numbers {
+  text-decoration: none;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 27px;
+  display: inline-block;
+  vertical-align: middle;
 }
-#top-footer-bar .right-content-container a:link, #top-footer-bar .right-content-container a:visited {
+#pagination .page-numbers:visited, #pagination .page-numbers:link, #pagination .page-numbers.dots {
+  color: black;
+}
+#pagination .page-numbers:active, #pagination .page-numbers:hover, #pagination .page-numbers.current {
   color: #055ff9;
 }
-
-#bottom-footer-bar {
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 0px;
-}
-#bottom-footer-bar .left-content-container {
-  display: flex;
-}
-#bottom-footer-bar .menu {
-  gap: 0;
-}
-#bottom-footer-bar .menu li {
+#pagination .prev,
+#pagination .next {
   position: relative;
-  padding: 0px 10px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(5, 95, 249, 0.2);
+  border-radius: 50%;
 }
-#bottom-footer-bar .menu li:not(:last-child)::after {
-  content: " ";
+#pagination .prev .icon-arrow-blue:before,
+#pagination .next .icon-arrow-blue:before {
   position: absolute;
-  top: 5px;
-  right: 0;
-  width: 2px;
-  height: 18px;
-  border-right: 2px solid #747474;
+  top: 12px;
+  font-size: 18px;
+}
+#pagination .prev {
+  margin-right: 34px;
+}
+#pagination .prev .icon-arrow-blue:before {
+  right: 12px;
+  transform: rotate(360deg);
+}
+#pagination .next {
+  margin-left: 34px;
+}
+#pagination .next .icon-arrow-blue:before {
+  left: 12px;
+  transform: rotate(180deg);
+}
+
+#alert-message {
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */

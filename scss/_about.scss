@@ -27,11 +27,13 @@
     
         .leader {
             // margin-bottom: 30px;
-    
-            .portrait-img {
+            
+            .portrait-img-container {
+                position: relative;
                 aspect-ratio: 1 / 1;
                 max-width: 270px;
                 border-radius: 30px;
+                overflow: hidden;
                 margin-bottom: 30px;
             }
         }

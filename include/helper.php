@@ -98,14 +98,16 @@ function generateVideo($image, $link, $size = "small", $modal = true) {
     }
 
     $html = '
-        <div class="video ' . $vid_size . '">
-            <img class="background-image lazy" alt="" src="' . $image . '" />
-            <a href="' . $link . '" class="play-container ' . $open_to_popup . '">
-                <span class="icon-play">
-                    <span class="path1"></span>
-                    <span class="path2"></span>
-                </span>
-            </a> 
+        <div class="video-container">
+            <div class="video ' . $vid_size . '">
+                <img class="background-image lazy" alt="" src="' . $image . '" />
+                <a href="' . $link . '" class="play-container ' . $open_to_popup . '">
+                    <span class="icon-play">
+                        <span class="path1"></span>
+                        <span class="path2"></span>
+                    </span>
+                </a> 
+            </div>
         </div>
     ';
 

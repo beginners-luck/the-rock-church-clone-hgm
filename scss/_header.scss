@@ -62,13 +62,15 @@ header {
 // Remove margin for certain templates with default header
 .page-template-im-new-template,
 .page-template-about-template,
-.page-template-contact-template {
+.page-template-contact-template,
+.post-type-archive-messages {
     #default-header-container {
         margin-bottom: 0;
     }
 }
 
-.page-template-im-new-template {
+.page-template-im-new-template,
+.post-type-archive-messages {
     #default-header-container {
         // Add blue-background for certain templates with default header
         &::before {
@@ -125,5 +127,24 @@ header {
     // Linear gradient overlay
     &::after {
         @include linear-gradient-overlay; 
+    }
+}
+
+// Message Single Header 
+#single-message-header-container {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    padding: 50px 15px; 
+
+    &::after {
+        content: ""; 
+        position: absolute; 
+        top: 0;
+        left: 0; 
+        width: 100%;
+        height: 50%;
+        border-radius: 0 0 30px 30px;
+        background-color: $blue;
     }
 }

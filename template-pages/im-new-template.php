@@ -6,9 +6,9 @@ get_header();
 <div id="content" role="main" <?php post_class(); ?>>
     <div class="container-fluid">
 
-        <div id="new-introduction-container">
+        <div class="introduction-video-container">
             <div class="container container-1170">
-                <div class="intro-container">
+                <div class="intro-video-container">
                     <div class="wp-content left-content-container">
                         <?php the_field('introduction_content') ?>
                     </div>

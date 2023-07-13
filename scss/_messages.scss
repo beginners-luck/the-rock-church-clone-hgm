@@ -1,0 +1,153 @@
+/*
+Styles for messages and single message.
+*/
+
+
+// Single Message
+#content {
+    #messages-content {
+        .post-title {
+            margin-bottom: 10px;
+        }
+
+        .post-date {
+            margin-bottom: 30px;
+        }
+        
+        .wp-content {
+            margin-bottom: 30px !important;
+        }
+        
+        .file-download {
+            display: flex;
+            justify-content: space-between;
+            @include align-center; 
+            padding: 20px 0; 
+            border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+            a {
+                display: inline-block;
+                text-decoration: none;
+
+                span {
+                    vertical-align: middle;
+                }
+            }
+        }
+    }
+
+    #return-to-sermons-bar {
+        text-align: center;
+        padding: 24px 15px; 
+    }
+}
+
+
+// Archive Messages 
+.no-recent-sermon {
+    background-color: $blue;
+    height: 100px; 
+}
+
+#archived-messages {
+    > div {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+
+        .message {
+            .message-link {
+                display: block;
+                @include transition; 
+        
+                &:hover {
+                    transform: translateY(-10px);
+                }
+
+                text-decoration: none;
+
+                .photo-container {
+                    position: relative;
+                    aspect-ratio: 370 / 219;
+                    max-width: 370px;
+                    border-radius: 30px;
+                    overflow: hidden;
+                    margin-bottom: 20px;
+                }
+    
+                .message-title {
+                    margin-bottom: 10px;
+                }
+
+                .message-date {
+                    color: $grey; 
+                }
+            }
+        }
+    }
+}
+
+#pagination {
+    text-align: center;
+    padding: 30px 15px;
+    display: flex;
+    @include align-center;
+    justify-content: center;
+    gap: 20px; 
+
+
+    .page-numbers {
+        text-decoration: none;
+        font-family: $secondaryFont;
+        font-size: 27px; 
+        display: inline-block;
+        vertical-align: middle;
+
+        &:visited,
+        &:link,
+        &.dots {
+            color: black;
+        }
+
+        &:active, 
+        &:hover,
+        &.current {
+            color: $blue;
+        }
+
+    }
+
+    .prev,
+    .next {
+        position: relative; 
+        width: 40px;
+        height: 40px;
+        background-color: rgba($blue, 0.2);
+        border-radius: 50%;
+
+        .icon-arrow-blue:before {
+            position: absolute; 
+            top: 12px; 
+            font-size: 18px;
+        }
+    }
+
+    .prev {
+        margin-right: 34px;
+        .icon-arrow-blue:before {
+            right: 12px; 
+            transform: rotate(360deg);
+        }
+    }
+
+    .next {
+        margin-left: 34px;
+        .icon-arrow-blue:before {
+            left: 12px; 
+            transform: rotate(180deg);
+        }
+    }
+}
+
+#alert-message {
+    text-align: center;
+}
